@@ -1,21 +1,24 @@
 Summary:	misc-misc font
 Summary(pl):	Font misc-misc
 Name:		xorg-font-font-misc-misc
-Version:	0.99.0
-Release:	0.01
-License:	MIT
+Version:	0.99.2
+Release:	0.1
+License:	Public Domain
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/font/font-misc-misc-%{version}.tar.bz2
-# Source0-md5:	40c631945183f130d3f8fd9012c6126e
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-misc-misc-%{version}.tar.bz2
+# Source0-md5:	8051f8f3b245ef505f3d2092ed4ec0c3
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util
+BuildRequires:	xorg-font-font-util >= 0.99.2
 BuildRequires:	xorg-util-util-macros
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/misc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +34,8 @@ Font misc-misc.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-fontdir=%{_fontsdir}/misc
 
 %{__make}
 
@@ -44,6 +48,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+fontpostinst misc
+
+%postun
+fontpostinst misc
+
 %files
 %defattr(644,root,root,755)
-%{_libdir}/X11/fonts/misc/*
+%doc COPYING ChangeLog
+%{_fontsdir}/misc/*.pcf.gz
