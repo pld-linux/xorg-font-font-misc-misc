@@ -1,5 +1,5 @@
-Summary:	misc-misc font
-Summary(pl):	Font misc-misc
+Summary:	misc-misc fonts
+Summary(pl):	Fonty misc-misc
 Name:		xorg-font-font-misc-misc
 Version:	1.0.0
 Release:	0.2
@@ -22,10 +22,10 @@ Requires:	%{_fontsdir}/misc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-misc-misc font.
+misc-misc fonts.
 
 %description -l pl
-Font misc-misc.
+Fonty misc-misc.
 
 %package base
 Summary:	Base fonts (fixed)
@@ -41,7 +41,7 @@ Obsoletes:	XFree86-fonts-base
 Base fonts (fixed) needed to start X server.
 
 %description base -l pl
-Podstawowe fonty (fixed) niezbÃªdne do uruchomienia X serwera.
+Podstawowe fonty (fixed) niezbêdne do uruchomienia X serwera.
 
 %package ISO8859-1
 Summary:	ISO-8859-1 basic raster fonts
