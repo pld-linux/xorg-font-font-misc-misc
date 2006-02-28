@@ -2,7 +2,7 @@ Summary:	misc-misc fonts
 Summary(pl):	Fonty misc-misc
 Name:		xorg-font-font-misc-misc
 Version:	1.0.0
-Release:	0.2
+Release:	0.3
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-misc-misc-%{version}.tar.bz2
@@ -317,6 +317,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+echo 'fixed -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1' \
+    > $RPM_BUILD_ROOT%{_fontsdir}/misc/fonts.alias.xorg-fonts-base
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -437,6 +440,7 @@ fontpostinst misc
 %files base
 %defattr(644,root,root,755)
 %{_fontsdir}/misc/6x13-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/fonts.alias.xorg-fonts-base
 %ghost %{_fontsdir}/misc/fonts.dir
 
 %files ISO8859-1
