@@ -2,7 +2,7 @@ Summary:	misc-misc fonts
 Summary(pl):	Fonty misc-misc
 Name:		xorg-font-font-misc-misc
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-misc-misc-%{version}.tar.bz2
