@@ -1,5 +1,5 @@
 Summary:	misc-misc fonts
-Summary(pl.UTF-8):   Fonty misc-misc
+Summary(pl.UTF-8):	Fonty misc-misc
 Name:		xorg-font-font-misc-misc
 Version:	1.0.0
 Release:	2
@@ -29,7 +29,7 @@ Fonty misc-misc.
 
 %package base
 Summary:	Base fonts (fixed)
-Summary(pl.UTF-8):   Podstawowe fonty (fixed)
+Summary(pl.UTF-8):	Podstawowe fonty (fixed)
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires(triggerpostun):	fontpostinst
@@ -44,7 +44,7 @@ Podstawowe fonty (fixed) niezbędne do uruchomienia X serwera.
 
 %package ISO8859-1
 Summary:	ISO-8859-1 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-1
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-1
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -59,7 +59,7 @@ Podstawowe fonty rastrowe ISO-8859-1.
 
 %package ISO8859-2
 Summary:	ISO-8859-2 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-2
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-2
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -74,7 +74,7 @@ Podstawowe fonty rastrowe ISO-8859-2.
 
 %package ISO8859-3
 Summary:	ISO-8859-3 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-3
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-3
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -89,7 +89,7 @@ Podstawowe fonty rastrowe ISO-8859-3.
 
 %package ISO8859-4
 Summary:	ISO-8859-4 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-4
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-4
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -104,7 +104,7 @@ Podstawowe fonty rastrowe ISO-8859-4.
 
 %package ISO8859-5
 Summary:	ISO-8859-5 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-5
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-5
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -119,7 +119,7 @@ Podstawowe fonty rastrowe ISO-8859-5.
 
 %package ISO8859-6
 Summary:	ISO-8859-6 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-6
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-6
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -134,7 +134,7 @@ Podstawowe fonty rastrowe ISO-8859-6.
 
 %package ISO8859-7
 Summary:	ISO-8859-7 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-7
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-7
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -149,7 +149,7 @@ Podstawowe fonty rastrowe ISO-8859-7.
 
 %package ISO8859-8
 Summary:	ISO-8859-8 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-8
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-8
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -164,7 +164,7 @@ Podstawowe fonty rastrowe ISO-8859-8.
 
 %package ISO8859-9
 Summary:	ISO-8859-9 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-9
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-9
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -179,7 +179,7 @@ Podstawowe fonty rastrowe ISO-8859-9.
 
 %package ISO8859-10
 Summary:	ISO-8859-10 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-10
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-10
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -194,7 +194,7 @@ Podstawowe fonty rastrowe ISO-8859-10.
 
 %package ISO8859-11
 Summary:	ISO-8859-11 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-11
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-11
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -209,7 +209,7 @@ Podstawowe fonty rastrowe ISO-8859-11.
 
 %package ISO8859-12
 Summary:	ISO-8859-12 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-12
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-12
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -224,7 +224,7 @@ Podstawowe fonty rastrowe ISO-8859-12.
 
 %package ISO8859-13
 Summary:	ISO-8859-13 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-13
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-13
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -239,7 +239,7 @@ Podstawowe fonty rastrowe ISO-8859-13.
 
 %package ISO8859-14
 Summary:	ISO-8859-14 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-14
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-14
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -254,7 +254,7 @@ Podstawowe fonty rastrowe ISO-8859-14.
 
 %package ISO8859-15
 Summary:	ISO-8859-15 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-15
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-15
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
@@ -269,7 +269,7 @@ Podstawowe fonty rastrowe ISO-8859-15.
 
 %package ISO8859-16
 Summary:	ISO-8859-16 basic raster fonts
-Summary(pl.UTF-8):   Podstawowe fonty rastrowe ISO-8859-16
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-16
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires:	fontpostinst
