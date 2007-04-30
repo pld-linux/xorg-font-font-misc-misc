@@ -24,12 +24,13 @@ Requires:	xorg-font-font-alias >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Fixed bitmap fonts. Main package contains Unicode fonts, Japanese k14
-font and nil2 font.
+Fixed bitmap fonts. Main package contains Unicode fonts, KOI8-R fonts,
+Japanese k14 font and nil2 font.
 
 %description -l pl.UTF-8
 Fonty bitmapowe o stałej szerokości znaków (fixed). Główny pakiet
-zawiera fonty unikodowe, japoński font k14 i font nil2.
+zawiera fonty unikodowe, fonty w kodowaniu KOI8-R, japoński font k14 i
+font nil2.
 
 %package base
 Summary:	Base font (fixed)
