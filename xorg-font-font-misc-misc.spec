@@ -1,11 +1,11 @@
-Summary:	misc-misc fonts
-Summary(pl.UTF-8):	Fonty misc-misc
+Summary:	Fixed bitmap fonts
+Summary(pl.UTF-8):	Fonty bitmapowe o stałej szerokości
 Name:		xorg-font-font-misc-misc
 Version:	1.0.0
 Release:	3
 License:	Public Domain
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-misc-misc-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-misc-%{version}.tar.bz2
 # Source0-md5:	2a57f6188c41d4bc1b88ca3d08ad011d
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
@@ -19,36 +19,46 @@ BuildRequires:	xorg-font-font-util >= 0.99.2
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
+# contains useful aliases for these fonts
+Requires:	xorg-font-font-alias >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-misc-misc fonts.
+Fixed bitmap fonts. Main package contains Unicode fonts, Japanese k14
+font and nil2 font.
 
 %description -l pl.UTF-8
-Fonty misc-misc.
+Fonty bitmapowe o stałej szerokości znaków (fixed). Główny pakiet
+zawiera fonty unikodowe, japoński font k14 i font nil2.
 
 %package base
-Summary:	Base fonts (fixed)
-Summary(pl.UTF-8):	Podstawowe fonty (fixed)
+Summary:	Base font (fixed)
+Summary(pl.UTF-8):	Podstawowy font (fixed)
 Group:		Fonts
 Requires(post,postun):	fontpostinst
 Requires(triggerpostun):	fontpostinst
+Requires:	%{_fontsdir}/misc
 Requires:	fontpostinst
+# contains useful aliases for these fonts
+Requires:	xorg-font-font-alias >= 1.0.0
 Obsoletes:	XFree86-fonts-base <= 1:7.0.0
 
 %description base
-Base fonts (fixed) needed to start X server.
+Base font (fixed) needed to start X server.
 
 %description base -l pl.UTF-8
-Podstawowe fonty (fixed) niezbędne do uruchomienia X serwera.
+Podstawowy font (fixed) niezbędny do uruchomienia serwera X.
 
 %package ISO8859-1
 Summary:	ISO-8859-1 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-1
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
+# contains useful aliases for these fonts
+Requires:	xorg-font-font-alias >= 1.0.0
+Requires:	%{name}-base = %{version}-%{release}
 Obsoletes:	XFree86-fonts-ISO8859-1 < 1:7.0.0
 
 %description ISO8859-1
@@ -62,8 +72,8 @@ Summary:	ISO-8859-2 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-2
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-2 < 1:7.0.0
 
 %description ISO8859-2
@@ -77,8 +87,8 @@ Summary:	ISO-8859-3 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-3
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-3 < 1:7.0.0
 
 %description ISO8859-3
@@ -92,8 +102,8 @@ Summary:	ISO-8859-4 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-4
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-4 < 1:7.0.0
 
 %description ISO8859-4
@@ -107,8 +117,8 @@ Summary:	ISO-8859-5 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-5
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-5 < 1:7.0.0
 
 %description ISO8859-5
@@ -117,28 +127,13 @@ Basic ISO-8859-5 raster fonts.
 %description ISO8859-5 -l pl.UTF-8
 Podstawowe fonty rastrowe ISO-8859-5.
 
-%package ISO8859-6
-Summary:	ISO-8859-6 basic raster fonts
-Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-6
-Group:		Fonts
-Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
-Requires:	%{_fontsdir}/misc
-Obsoletes:	XFree86-fonts-ISO8859-6 < 1:7.0.0
-
-%description ISO8859-6
-ISO-8859-6 basic raster fonts.
-
-%description ISO8859-6 -l pl.UTF-8
-Podstawowe fonty rastrowe ISO-8859-6.
-
 %package ISO8859-7
 Summary:	ISO-8859-7 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-7
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-7 < 1:7.0.0
 
 %description ISO8859-7
@@ -152,8 +147,8 @@ Summary:	ISO-8859-8 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-8
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-8 < 1:7.0.0
 
 %description ISO8859-8
@@ -167,8 +162,8 @@ Summary:	ISO-8859-9 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-9
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-9 < 1:7.0.0
 
 %description ISO8859-9
@@ -182,8 +177,8 @@ Summary:	ISO-8859-10 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-10
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-10 < 1:7.0.0
 
 %description ISO8859-10
@@ -197,8 +192,8 @@ Summary:	ISO-8859-11 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-11
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-11 < 1:7.0.0
 
 %description ISO8859-11
@@ -207,28 +202,13 @@ ISO-8859-11 basic raster fonts.
 %description ISO8859-11 -l pl.UTF-8
 Podstawowe fonty rastrowe ISO-8859-11.
 
-%package ISO8859-12
-Summary:	ISO-8859-12 basic raster fonts
-Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-12
-Group:		Fonts
-Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
-Requires:	%{_fontsdir}/misc
-Obsoletes:	XFree86-fonts-ISO8859-12 < 1:7.0.0
-
-%description ISO8859-12
-ISO-8859-12 basic raster fonts.
-
-%description ISO8859-12 -l pl.UTF-8
-Podstawowe fonty rastrowe ISO-8859-12.
-
 %package ISO8859-13
 Summary:	ISO-8859-13 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-13
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-13 < 1:7.0.0
 
 %description ISO8859-13
@@ -242,8 +222,8 @@ Summary:	ISO-8859-14 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-14
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-14 < 1:7.0.0
 
 %description ISO8859-14
@@ -257,8 +237,8 @@ Summary:	ISO-8859-15 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-15
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-15 < 1:7.0.0
 
 %description ISO8859-15
@@ -272,8 +252,8 @@ Summary:	ISO-8859-16 basic raster fonts
 Summary(pl.UTF-8):	Podstawowe fonty rastrowe ISO-8859-16
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires:	fontpostinst
 Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
 Obsoletes:	XFree86-fonts-ISO8859-16 < 1:7.0.0
 
 %description ISO8859-16
@@ -299,9 +279,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-echo 'fixed -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1' \
-    > $RPM_BUILD_ROOT%{_fontsdir}/misc/fonts.alias.xorg-fonts-base
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -348,12 +325,6 @@ fontpostinst misc
 %postun ISO8859-5
 fontpostinst misc
 
-%post ISO8859-6
-fontpostinst misc
-
-%postun ISO8859-6
-fontpostinst misc
-
 %post ISO8859-7
 fontpostinst misc
 
@@ -382,12 +353,6 @@ fontpostinst misc
 fontpostinst misc
 
 %postun ISO8859-11
-fontpostinst misc
-
-%post ISO8859-12
-fontpostinst misc
-
-%postun ISO8859-12
 fontpostinst misc
 
 %post ISO8859-13
@@ -423,7 +388,6 @@ fontpostinst misc
 %files base
 %defattr(644,root,root,755)
 %{_fontsdir}/misc/6x13-ISO8859-1.pcf.gz
-%{_fontsdir}/misc/fonts.alias.xorg-fonts-base
 %ghost %{_fontsdir}/misc/fonts.dir
 
 %files ISO8859-1
@@ -434,7 +398,6 @@ fontpostinst misc
 %files ISO8859-2
 %defattr(644,root,root,755)
 %{_fontsdir}/misc/*ISO8859-2.pcf.gz
-#%{_fontsdir}/misc/fonts.alias.%{name}-ISO8859-2
 
 %files ISO8859-3
 %defattr(644,root,root,755)
@@ -447,10 +410,6 @@ fontpostinst misc
 %files ISO8859-5
 %defattr(644,root,root,755)
 %{_fontsdir}/misc/*ISO8859-5.pcf.gz
-
-#%files ISO8859-6
-#%defattr(644,root,root,755)
-#%%{_fontsdir}/misc/*ISO8859-6.pcf.gz
 
 %files ISO8859-7
 %defattr(644,root,root,755)
@@ -471,10 +430,6 @@ fontpostinst misc
 %files ISO8859-11
 %defattr(644,root,root,755)
 %{_fontsdir}/misc/*ISO8859-11.pcf.gz
-
-#%files ISO8859-12
-#%defattr(644,root,root,755)
-#%%{_fontsdir}/misc/*ISO8859-12.pcf.gz
 
 %files ISO8859-13
 %defattr(644,root,root,755)
