@@ -20,7 +20,7 @@ BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 # contains useful aliases for these fonts
-Requires:	xorg-font-font-alias >= 1.0.0
+Requires:	xorg-font-font-alias >= 1.0.1-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +41,7 @@ Requires(triggerpostun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 Requires:	fontpostinst
 # contains useful aliases for these fonts
-Requires:	xorg-font-font-alias >= 1.0.0
+Requires:	xorg-font-font-alias >= 1.0.1-1
 Obsoletes:	XFree86-fonts-base <= 1:7.0.0
 
 %description base
@@ -58,7 +58,7 @@ Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 Requires:	fontpostinst
 # contains useful aliases for these fonts
-Requires:	xorg-font-font-alias >= 1.0.0
+Requires:	xorg-font-font-alias >= 1.0.1-1
 Requires:	%{name}-base = %{version}-%{release}
 Obsoletes:	XFree86-fonts-ISO8859-1 < 1:7.0.0
 
