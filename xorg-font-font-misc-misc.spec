@@ -1,12 +1,12 @@
 Summary:	Fixed bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe o stałej szerokości
 Name:		xorg-font-font-misc-misc
-Version:	1.0.0
-Release:	5
+Version:	1.1.0
+Release:	1
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-misc-%{version}.tar.bz2
-# Source0-md5:	2a57f6188c41d4bc1b88ca3d08ad011d
+# Source0-md5:	878bfd4e9f14c1279cea3a8392e0dbdd
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -15,7 +15,7 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 0.99.2
+BuildRequires:	xorg-font-font-util >= 1.1.1
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
@@ -272,6 +272,8 @@ Podstawowe fonty rastrowe ISO-8859-16.
 %{__autoconf}
 %{__automake}
 %configure \
+	--build=%{_host_platform} \
+	--host=%{_host_platform} \
 	--with-fontdir=%{_fontsdir}/misc
 
 %{__make}
