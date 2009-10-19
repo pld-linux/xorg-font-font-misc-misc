@@ -2,7 +2,7 @@ Summary:	Fixed bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe o stałej szerokości
 Name:		xorg-font-font-misc-misc
 Version:	1.1.0
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-misc-%{version}.tar.bz2
@@ -16,7 +16,7 @@ BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	xorg-font-font-util >= 1.1.1
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 # contains useful aliases for these fonts
@@ -25,13 +25,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Fixed bitmap fonts. Main package contains Unicode fonts, KOI8-R fonts,
-Japanese k14 font and nil2 font.
+Fixed bitmap fonts. Main package contains Unicode fonts, Japanese k14
+font and nil2 font.
 
 %description -l pl.UTF-8
 Fonty bitmapowe o stałej szerokości znaków (fixed). Główny pakiet
-zawiera fonty unikodowe, fonty w kodowaniu KOI8-R, japoński font k14 i
-font nil2.
+zawiera fonty unikodowe, japoński font k14 i font nil2.
 
 %package base
 Summary:	Base font (fixed)
@@ -264,6 +263,22 @@ ISO-8859-16 basic raster fonts.
 %description ISO8859-16 -l pl.UTF-8
 Podstawowe fonty rastrowe ISO-8859-16.
 
+%package KOI8-R
+Summary:	KOI8-R basic raster fonts
+Summary(pl.UTF-8):	Podstawowe fonty rastrowe KOI8-R
+Group:		Fonts
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/misc
+Requires:	fontpostinst
+Obsoletes:	XFree86-fonts-KOI8-R < 1:7.0.0
+Conflicts:	xorg-font-font-misc-misc <= 1.1.0-1
+
+%description KOI8-R
+KOI8-R basic raster fonts.
+
+%description KOI8-R -l pl.UTF-8
+Podstawowe fonty rastrowe KOI8-R.
+
 %prep
 %setup -q -n font-misc-misc-%{version}
 
@@ -272,8 +287,8 @@ Podstawowe fonty rastrowe ISO-8859-16.
 %{__autoconf}
 %{__automake}
 %configure \
-	--build=%{_host_platform} \
-	--host=%{_host_platform} \
+	--build=%{_host} \
+	--host=%{_host} \
 	--with-fontdir=%{_fontsdir}/misc
 
 %{__make}
@@ -383,11 +398,40 @@ fontpostinst misc
 %postun ISO8859-16
 fontpostinst misc
 
+%post KOI8-R
+fontpostinst misc
+
+%postun KOI8-R
+fontpostinst misc
+
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
-%{_fontsdir}/misc/*.pcf.gz
-%exclude %{_fontsdir}/misc/*-ISO8859-*.pcf.gz
+%doc AUTHORS COPYING ChangeLog README
+%{_fontsdir}/misc/4x6.pcf.gz
+%{_fontsdir}/misc/5x7.pcf.gz
+%{_fontsdir}/misc/5x8.pcf.gz
+%{_fontsdir}/misc/6x9.pcf.gz
+%{_fontsdir}/misc/6x10.pcf.gz
+%{_fontsdir}/misc/6x12.pcf.gz
+%{_fontsdir}/misc/6x13.pcf.gz
+%{_fontsdir}/misc/6x13[BO].pcf.gz
+%{_fontsdir}/misc/7x13.pcf.gz
+%{_fontsdir}/misc/7x13[BO].pcf.gz
+%{_fontsdir}/misc/7x14.pcf.gz
+%{_fontsdir}/misc/7x14-JISX0201.1976-0.pcf.gz
+%{_fontsdir}/misc/7x14B.pcf.gz
+%{_fontsdir}/misc/8x13.pcf.gz
+%{_fontsdir}/misc/8x13[BO].pcf.gz
+%{_fontsdir}/misc/9x15.pcf.gz
+%{_fontsdir}/misc/9x15B.pcf.gz
+%{_fontsdir}/misc/9x18.pcf.gz
+%{_fontsdir}/misc/9x18B.pcf.gz
+%{_fontsdir}/misc/10x20.pcf.gz
+%{_fontsdir}/misc/12x13ja.pcf.gz
+%{_fontsdir}/misc/18x18ja.pcf.gz
+%{_fontsdir}/misc/18x18ko.pcf.gz
+%{_fontsdir}/misc/k14.pcf.gz
+%{_fontsdir}/misc/nil2.pcf.gz
 
 %files base
 %defattr(644,root,root,755)
@@ -396,57 +440,80 @@ fontpostinst misc
 
 %files ISO8859-1
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-1.pcf.gz
-%exclude %{_fontsdir}/misc/6x13-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/[45]x*-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/6x9-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/6x10-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/6x12-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/6x13[BO]-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/[789]x*-ISO8859-1.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-1.pcf.gz
 
 %files ISO8859-2
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-2.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-2.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-2.pcf.gz
 
 %files ISO8859-3
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-3.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-3.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-3.pcf.gz
 
 %files ISO8859-4
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-4.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-4.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-4.pcf.gz
 
 %files ISO8859-5
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-5.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-5.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-5.pcf.gz
 
 %files ISO8859-7
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-7.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-7.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-7.pcf.gz
 
 %files ISO8859-8
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-8.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-8.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-8.pcf.gz
 
 %files ISO8859-9
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-9.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-9.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-9.pcf.gz
 
 %files ISO8859-10
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-10.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-10.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-10.pcf.gz
 
 %files ISO8859-11
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-11.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-11.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-11.pcf.gz
 
 %files ISO8859-13
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-13.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-13.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-13.pcf.gz
 
 %files ISO8859-14
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-14.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-14.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-14.pcf.gz
 
 %files ISO8859-15
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-15.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-15.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-15.pcf.gz
 
 %files ISO8859-16
 %defattr(644,root,root,755)
-%{_fontsdir}/misc/*ISO8859-16.pcf.gz
+%{_fontsdir}/misc/[456789]x*-ISO8859-16.pcf.gz
+%{_fontsdir}/misc/10x20-ISO8859-16.pcf.gz
+
+%files KOI8-R
+%defattr(644,root,root,755)
+%{_fontsdir}/misc/[456789]x*-KOI8-R.pcf.gz
+%{_fontsdir}/misc/10x20-KOI8-R.pcf.gz
