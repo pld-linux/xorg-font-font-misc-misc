@@ -1,22 +1,24 @@
 Summary:	Fixed bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe o stałej szerokości
 Name:		xorg-font-font-misc-misc
-Version:	1.1.2
-Release:	2
+Version:	1.1.3
+Release:	1
 License:	Public Domain
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-misc-%{version}.tar.bz2
-# Source0-md5:	c88eb44b3b903d79fb44b860a213e623
-URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+Source0:	https://xorg.freedesktop.org/releases/individual/font/font-misc-misc-%{version}.tar.xz
+# Source0-md5:	145128c4b5f7820c974c8c5b9f6ffe94
+URL:		https://xorg.freedesktop.org/
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.2
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-font-font-util >= 1.4
+BuildRequires:	xorg-util-util-macros >= 1.20
+BuildRequires:	xz
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 # contains useful aliases for these fonts
@@ -37,7 +39,6 @@ Summary:	Base font (fixed)
 Summary(pl.UTF-8):	Podstawowy font (fixed)
 Group:		Fonts
 Requires(post,postun):	fontpostinst
-Requires(triggerpostun):	fontpostinst
 Requires:	%{_fontsdir}/misc
 Requires:	fontpostinst
 # contains useful aliases for these fonts
@@ -287,8 +288,10 @@ Podstawowe fonty rastrowe KOI8-R.
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_gnu}" != "-gnux32"
 	--build=%{_host} \
 	--host=%{_host} \
+%endif
 	--with-fontdir=%{_fontsdir}/misc
 
 %{__make}
@@ -406,7 +409,7 @@ fontpostinst misc
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README.md
 %{_fontsdir}/misc/4x6.pcf.gz
 %{_fontsdir}/misc/5x7.pcf.gz
 %{_fontsdir}/misc/5x8.pcf.gz
